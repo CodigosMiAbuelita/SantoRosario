@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Santo Rosario</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js');
+        });
+    }
+    </script>
+</head>
+<body>
+    <div class="glass-container">
+        <header>
+            <h1>Santo Rosario</h1>
+        </header>
+
+        <div class="selector-container">
+            <label for="mystery-select">Seleccione los Misterios:</label>
+            <select id="mystery-select">
+                <option value="gozosos">Gozosos (Lunes y Sábado)</option>
+                <option value="luminosos">Luminosos (Jueves)</option>
+                <option value="dolorosos">Dolorosos (Martes y Viernes)</option>
+                <option value="gloriosos">Gloriosos (Miércoles y Domingo)</option>
+            </select>
+        </div>
+
+        <div class="cover-container">
+            <img id="cover-image" src="./Images/gozosos.jpg" alt="Portada del Misterio">
+        </div>
+
+        <div class="track-info">
+            <h2 id="track-title">1er Misterio (Intro)</h2>
+            <p id="mystery-title">Misterios Gozosos</p>
+        </div>
+
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progress-bar" min="0" max="100" value="0">
+            <span id="duration-time">0:00</span>
+        </div>
+
+        <div class="controls">
+            <button id="prev-btn" class="control-btn secondary"><i class="fas fa-backward-step"></i></button>
+            <button id="play-btn" class="control-btn primary"><i class="fas fa-play"></i></button>
+            <button id="next-btn" class="control-btn secondary"><i class="fas fa-forward-step"></i></button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
